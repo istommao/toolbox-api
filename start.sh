@@ -7,5 +7,6 @@ echo "
    ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝╚═════╝  ╚═════╝ ╚═╝  ╚═╝     ╚═╝  ╚═╝╚═╝     ╚═╝
 "
 
+# uvicorn main:app --host 127.0.0.1 --port 3800 --workers 2
 
 uvicorn main:app --host 127.0.0.1 --port 3800 --reload
