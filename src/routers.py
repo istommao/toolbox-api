@@ -1,5 +1,5 @@
 """routers map"""
-from src.apis import page, xdate, fdata
+from src.apis import page, xdate, fdata, ipaddr
 
 
 ROUTER_CONFIG = [
@@ -17,6 +17,14 @@ ROUTER_CONFIG = [
         {
             'prefix': '/api/fdata',
             'tags': ['fakedata'],
+            'responses': {404: {'description': '404 Not found'}}
+        }
+    ),
+    (
+        ipaddr.router,
+        {
+            'prefix': '/api/ipaddr',
+            'tags': ['ipaddr'],
             'responses': {404: {'description': '404 Not found'}}
         }
     )
