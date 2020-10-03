@@ -9,4 +9,13 @@ echo "
 
 # uvicorn main:app --host 127.0.0.1 --port 3800 --workers 2
 
-uvicorn main:app --host 127.0.0.1 --port 3800 --reload
+# uvicorn main:app --host 127.0.0.1 --port 3800 --reload
+
+if [ $# -ne 1 ];then
+    uvicorn main:app --host 127.0.0.1 --port 3800
+else
+    if [ $1 = 'dev' ];then
+        uvicorn main:app --host 127.0.0.1 --port 3800 --reload
+    fi
+
+fi

@@ -15,13 +15,6 @@ router = APIRouter()
 DATETIME_FMT = '%Y-%m-%d %H:%M:%S'
 
 
-@router.get('/')
-async def xdate_api(request: Request):
-    # result = {*dir(request)}
-
-    return {'Description': 'datetime tools'}
-
-
 @router.get('/ts', response_class=PlainTextResponse)
 async def ts_to_datetime_api(request: Request):
     ts = request.query_params.get('w')

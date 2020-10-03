@@ -11,11 +11,6 @@ from src.toolbox import dateutils
 router = APIRouter()
 
 
-@router.get('/')
-async def fdata_api(request: Request):
-    return {'Description': 'fake data tools'}
-
-
 @router.get('/list')
 async def fdata_list_api(request: Request):
     fields = request.query_params.get('fields') or ''
