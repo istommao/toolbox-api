@@ -16,10 +16,6 @@ def ts_to_datetime(timestamp: int, raise_exception=False):
     dobj = datetime.datetime.fromtimestamp(timestamp)
     return dobj
 
-    max_datetime = datetime.datetime.combine(x, datetime.time.max)
-    max_datetime_ts = int(max_datetime.timestamp())
-    return max_datetime_ts
-
 
 def datetime_to_ts(datetime_obj: object, keep_millisecond=False):
     """datetime object to timestamp

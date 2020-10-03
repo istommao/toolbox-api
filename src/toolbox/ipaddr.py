@@ -10,4 +10,3 @@ def is_valid_ip_address(ipaddr):
     """Validate ip address is valid."""
     is_valid = re.match(IP_ADDRESS_REGEX, ipaddr)
     return True if is_valid else False
-

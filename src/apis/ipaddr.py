@@ -11,7 +11,7 @@ router = APIRouter()
 
 
 @router.get('/')
-async def is_valid_api(request: Request):
+async def ip_is_valid_api(request: Request):
     ip = request.query_params.get('w')
 
     is_valid = ipaddr.is_valid_ip_address(ip)
