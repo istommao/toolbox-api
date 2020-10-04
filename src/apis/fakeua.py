@@ -16,6 +16,6 @@ async def get_user_agent_api(request: Request):
 
     user_agent = FakeUserAgent().random_one()
 
-    data = user_agent if media_type == 'text' else {'user_agent': user_agent}
+    data = f'{user_agent}\n' if media_type == 'text' else {'user_agent': user_agent}
 
     return Response(data, media_type=media_type)
