@@ -27,7 +27,7 @@ async def ts_to_datetime_api(request: Request):
     except (TypeError, ValueError):
         data = '-'
 
-    return data + '\n'
+    return data
 
 
 @router.get('/dt', response_class=PlainTextResponse)
@@ -43,4 +43,4 @@ async def datetime_to_ts_api(request: Request):
         except (TypeError, ValueError):
             data = '-'
 
-    return data + '\n'
+    return data
