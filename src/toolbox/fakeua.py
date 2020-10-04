@@ -9,6 +9,8 @@ class FakeUserAgent:
 
         self.browser_map = {
             'ie': self.__ua.ie,
+            'msie': self.__ua.msie,
+            'ff': self.__ua.ff,
             'opera': self.__ua.opera,
             'chrome': self.__ua.chrome,
             'safari': self.__ua.safari,

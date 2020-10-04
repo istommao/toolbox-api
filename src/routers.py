@@ -1,5 +1,5 @@
 """routers map"""
-from src.apis import page, xdate, fdata, ipaddr, fakeua
+from src.apis import page, xdate, fdata, ipaddr, fakeua, uaparse
 
 
 ROUTER_CONFIG = [
@@ -33,6 +33,14 @@ ROUTER_CONFIG = [
         {
             'prefix': '/api/fakeua',
             'tags': ['fakeua'],
+            'responses': {404: {'description': '404 Not found'}}
+        }
+    ),
+    (
+        uaparse.router,
+        {
+            'prefix': '/api/uaparse',
+            'tags': ['uaparse'],
             'responses': {404: {'description': '404 Not found'}}
         }
     )
