@@ -16,15 +16,14 @@ jobs:
     steps:  # 自动化步骤
     - uses: actions/checkout@v2   # 第一步，下载代码仓库
     - name: Deploy
-      uses: easingthemes/ssh-deploy@v2.0.7
+      uses: easingthemes/ssh-deploy@v2.1.5
       env:
         SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
-        ARGS: "-avz --delete"
-        SOURCE: "toolbox-api/"
-        REMOTE_PORT: ${{ secrets.SSH_PORT }}
+        ARGS: "-rltgoDzvO --delete"
+        SOURCE: "./toolbox-api/"
         REMOTE_HOST: ${{ secrets.SSH_HOST }}
         REMOTE_USER: ${{ secrets.SSH_USERNAME }}
-        TARGET: /data/
+        TARGET: "/data/"
 
     - name: test   # 第三步，重启服务
       uses: appleboy/ssh-action@master
