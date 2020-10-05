@@ -13,6 +13,7 @@ router = APIRouter()
 
 
 DATETIME_FMT = '%Y-%m-%d %H:%M:%S'
+DATE_FMT = '%Y-%m-%d'
 
 
 @router.get('/ts', response_class=PlainTextResponse)
