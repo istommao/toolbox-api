@@ -1,5 +1,5 @@
 """routers map"""
-from src.apis import page, xdate, fdata, ipaddr, fakeua, uaparse
+from src.apis import page, xdate, fdata, ipaddr, fakeua, uaparse, xrandom
 
 
 ROUTER_CONFIG = [
@@ -9,6 +9,14 @@ ROUTER_CONFIG = [
         {
             'prefix': '/api/dateutils',
             'tags': ['datetime'],
+            'responses': {404: {'description': '404 Not found'}}
+        }
+    ),
+    (
+        xrandom.router,
+        {
+            'prefix': '/api/xrandom',
+            'tags': ['xrandom'],
             'responses': {404: {'description': '404 Not found'}}
         }
     ),
