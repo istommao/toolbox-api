@@ -45,3 +45,38 @@ async def datetime_to_ts_api(request: Request):
             data = '-'
 
     return data
+
+
+@router.get('/dtrange', response_class=PlainTextResponse)
+async def datetime_range_api(request: Request):
+    """Datetime range api."""
+    query_params = request.query_params
+
+    dtstr = query_params.get('w')
+
+    if dtstr == 'day':
+        try:
+            days = int(query_params.get('days'))
+        except (TypeError, ValueError):
+            days = 0
+
+        start_at, end_at = dateutils.get_day_range(days=days)
+    elif dtstr == 'week':
+        try:
+            weeks = int(query_params.get('weeks'))
+        except (TypeError, ValueError):
+            weeks = 0
+
+        start_at, end_at = dateutils.get_week_range(weeks=weeks)
+    elif dtstr == 'month':
+        try:
+            months = int(query_params.get('months'))
+        except (TypeError, ValueError):
+            months = 0
+        start_at, end_at = dateutils.get_month_range(months=months)
+    else:
+        start_at = end_at = ''
+
+    data = '{}\n{}'.format(start_at, end_at)
+
+    return data

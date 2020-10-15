@@ -2,6 +2,12 @@
 import datetime
 
 
+DATE_FMT = '%Y-%m-%d'
+DATE_FMT_SLASH = '%Y/%m/%d'
+
+DATETIME_FMT = '%Y-%m-%d %H:%M:%S'
+
+
 def ts_to_datetime(timestamp: int, raise_exception=False):
     """timestamp to datetime object
 
