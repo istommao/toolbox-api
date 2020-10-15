@@ -1,4 +1,7 @@
 """toolbox xrandom."""
+import datetime
+import time
+
 import random
 
 
@@ -13,3 +16,13 @@ def get_random_number(length):
     return random.randint(
         10 ** (length - 1), 10 ** length - 1
     )
+
+
+def get_random_datetime(datetime_format):
+
+    if datetime_format == 'ts':
+        result = int(time.time())
+    else:
+        result = str(datetime.datetime.now())
+
+    return result
