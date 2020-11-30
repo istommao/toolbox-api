@@ -8,5 +8,8 @@ IP_ADDRESS_REGEX = (r'^(((\d{1,2})|(1\d{2,2})|(2[0-4][0-9])|'
 
 def is_valid_ip_address(ipaddr):
     """Validate ip address is valid."""
+    if not ipaddr:
+        return False
+
     is_valid = re.match(IP_ADDRESS_REGEX, ipaddr)
     return True if is_valid else False
